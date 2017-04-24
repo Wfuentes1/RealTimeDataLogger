@@ -12,21 +12,33 @@ function addANewNUmber()
     newNum = Number(newNum);
       numberValues.push(newNum);
   }
+  updateTotal();
+  updateAverage();
 }
 
 function updateTotal()
 {
-var total = 0;
+var runningTotal = 0;
 for( var i = 0; i<numberValues.length; i++)
 {
-  total = total + numberValues[i];
+  runningTotal = runningTotal + numberValues[i];
 }
-document.getElementById("total").innerHTML= total;
+document.getElementById("total").innerHTML= runningTotal;
 //go through each element in an array and add it to a running total
 //then update the screen to show what the total is
 }
 
 function updateAverage()
 {
+  var average = 0;
+  for( var i = 0; i<numberValues.length; i++)
+  {
+    average = average + numberValues[i];
+  }
+  average= average/numberValues.length;
+  document.getElementById("average").innerHTML=average;
+   //go through each element in an array and add it to a running total
+  //then divide by the number of elements in the array and
+ //finally, update the screen to show what the average is
 
 }
