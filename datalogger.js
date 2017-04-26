@@ -11,19 +11,21 @@ function addANewNUmber()
   {
     newNum = Number(newNum);
       numberValues.push(newNum);
-  }
-  updateTotal();
-  updateAverage();
+  var newTotal = calculateTotal();
+  document.getElementById("total").innerHTML= newTotal;
+  document.getElementById("average").innerHTML= newTotal/ numberValues.length;
+}
 }
 
-function updateTotal()
+function calculateTotal()
 {
 var runningTotal = 0;
 for( var i = 0; i<numberValues.length; i++)
 {
   runningTotal = runningTotal + numberValues[i];
 }
-document.getElementById("total").innerHTML= runningTotal;
+return runningTotal;
+//document.getElementById("total").innerHTML= runningTotal;
 //go through each element in an array and add it to a running total
 //then update the screen to show what the total is
 }
